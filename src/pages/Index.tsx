@@ -575,7 +575,7 @@ export default function Index() {
               </h2>
               <div className="space-y-6">
                 {[
-                  { icon: "MapPin", label: "Адрес", value: "г. Москва, ул. Творческая, 1" },
+                  { icon: "MapPin", label: "Адрес", value: "г. Вологда, ул. Маршала Конева, д. 15, оф. 214" },
                   { icon: "Phone", label: "Телефон", value: "+7 (495) 000-00-00" },
                   { icon: "Mail", label: "E-mail", value: "info@cki-center.ru" },
                   { icon: "Clock", label: "Режим работы", value: "Пн–Пт: 09:00–21:00\nСб–Вс: 10:00–18:00" },
