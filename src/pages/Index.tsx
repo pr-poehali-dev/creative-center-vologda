@@ -13,6 +13,7 @@ const NAV_ITEMS = [
   { id: "about", label: "О центре" },
   { id: "directions", label: "Направления" },
   { id: "projects", label: "Проекты" },
+  { id: "registry", label: "Реестр" },
   { id: "events", label: "События" },
   { id: "contacts", label: "Контакты" },
 ];
@@ -306,8 +307,102 @@ export default function Index() {
         </div>
       </section>
 
+      {/* REGISTRY */}
+      <section id="registry" className="section-padding bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 items-start">
+            {/* Left: header + intro */}
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="h-px w-8" style={{ background: ORANGE }} />
+                <p className="font-body text-xs tracking-[0.3em] uppercase" style={{ color: ORANGE }}>Реестр</p>
+              </div>
+              <h2 className="font-display text-4xl md:text-5xl font-light leading-tight mb-6 orange-line" style={{ color: BLUE }}>
+                Реестр креативных индустрий
+              </h2>
+              <p className="font-body text-[hsl(218,15%,38%)] leading-relaxed mb-6">
+                Внесение в реестр — официальное признание вашей деятельности как субъекта креативной экономики. Это открывает доступ к специальным мерам господдержки, грантам и льготным программам центра «Мой бизнес».
+              </p>
+              {/* Benefit cards */}
+              <div className="grid grid-cols-2 gap-4 mt-8">
+                {[
+                  { icon: "BadgeCheck", text: "Приоритетный доступ к грантам и субсидиям" },
+                  { icon: "Users", text: "Участие в федеральных выставках и форумах" },
+                  { icon: "BookOpen", text: "Бесплатные образовательные программы" },
+                  { icon: "Handshake", text: "База партнёров и корпоративных заказчиков" },
+                ].map(b => (
+                  <div key={b.text} className="flex gap-3 p-4 border border-[hsl(218,20%,88%)] bg-[hsl(218,20%,97%)]">
+                    <div className="w-8 h-8 shrink-0 flex items-center justify-center rounded" style={{ background: `${ORANGE}18` }}>
+                      <Icon name={b.icon} size={15} fallback="Check" style={{ color: ORANGE }} />
+                    </div>
+                    <p className="font-body text-xs text-[hsl(218,15%,38%)] leading-snug">{b.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right: conditions */}
+            <div>
+              <div className="border-l-4 pl-6 mb-8" style={{ borderColor: BLUE }}>
+                <h3 className="font-display text-2xl font-semibold mb-1" style={{ color: BLUE }}>Условия включения в реестр</h3>
+                <p className="font-body text-sm text-[hsl(218,15%,50%)]">Необходимо соответствовать всем критериям</p>
+              </div>
+
+              <div className="space-y-4">
+                {[
+                  {
+                    num: "01",
+                    title: "Регистрация субъекта МСП",
+                    desc: "ИП или юридическое лицо, зарегистрированное на территории региона и включённое в реестр МСП ФНС России.",
+                  },
+                  {
+                    num: "02",
+                    title: "Вид деятельности — ОКВЭД",
+                    desc: "Основной или дополнительный ОКВЭД должен соответствовать перечню видов деятельности, отнесённых к креативным индустриям.",
+                  },
+                  {
+                    num: "03",
+                    title: "Фактическое ведение деятельности",
+                    desc: "Подтверждённая деятельность в одном из направлений: ремесло, гастрономия, мода и дизайн или арт-искусство — не менее 6 месяцев.",
+                  },
+                  {
+                    num: "04",
+                    title: "Отсутствие задолженностей",
+                    desc: "Отсутствие задолженности по налогам, сборам и иным обязательным платежам в бюджет на дату подачи заявки.",
+                  },
+                  {
+                    num: "05",
+                    title: "Пакет документов",
+                    desc: "Заявление установленного образца, копии учредительных документов, портфолио или перечень реализованных проектов (не менее 3).",
+                  },
+                ].map(c => (
+                  <div key={c.num} className="flex gap-4 p-5 border border-[hsl(218,20%,88%)] hover:border-[hsl(218,73%,35%)] transition-colors group">
+                    <span className="font-display text-2xl font-light shrink-0 w-8 leading-none mt-0.5" style={{ color: `${BLUE}40` }}>{c.num}</span>
+                    <div>
+                      <p className="font-body text-sm font-semibold mb-1" style={{ color: BLUE }}>{c.title}</p>
+                      <p className="font-body text-sm text-[hsl(218,15%,45%)] leading-relaxed">{c.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA */}
+              <div className="mt-8 p-6 border-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4" style={{ borderColor: ORANGE, background: `${ORANGE}08` }}>
+                <div>
+                  <p className="font-body text-sm font-semibold" style={{ color: BLUE }}>Готовы подать заявку?</p>
+                  <p className="font-body text-xs text-[hsl(218,15%,50%)] mt-0.5">Срок рассмотрения — до 15 рабочих дней</p>
+                </div>
+                <button onClick={() => scrollTo("contacts")} className="btn-primary shrink-0">
+                  Подать заявку
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* EVENTS */}
-      <section id="events" className="section-padding bg-white">
+      <section id="events" className="section-padding bg-white" style={{ background: GRAY_BG }}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <div className="flex items-center justify-center gap-3 mb-4">
