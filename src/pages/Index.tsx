@@ -3,6 +3,12 @@ import Icon from "@/components/ui/icon";
 
 const HERO_IMAGE = "https://cdn.poehali.dev/projects/3eb85f6c-1aea-4dab-86ee-01a67fd82db9/files/0a6c2dcf-721d-4cbe-9114-8842508a12c1.jpg";
 
+/* ── Цветовые токены Мой бизнес ── */
+const BLUE = "hsl(218,73%,35%)";
+const BLUE_DARK = "hsl(220,78%,22%)";
+const ORANGE = "hsl(23,89%,55%)";
+const GRAY_BG = "hsl(218,20%,96%)";
+
 const NAV_ITEMS = [
   { id: "about", label: "О центре" },
   { id: "directions", label: "Направления" },
@@ -12,34 +18,60 @@ const NAV_ITEMS = [
 ];
 
 const DIRECTIONS = [
-  { icon: "Palette", title: "Дизайн и визуальные искусства", desc: "Графический дизайн, иллюстрация, брендинг, UI/UX. Программы для профессионалов и начинающих." },
-  { icon: "Music", title: "Музыка и звук", desc: "Звукозапись, продюсирование, музыкальная журналистика. Современные техники и классические основы." },
-  { icon: "Film", title: "Кино и медиа", desc: "Сценарное мастерство, режиссура, монтаж. От идеи до экрана — полный цикл создания контента." },
-  { icon: "BookOpen", title: "Литература и сторителлинг", desc: "Художественный и документальный нарратив, сценарии, журналистика. Развитие авторского голоса." },
-  { icon: "Globe", title: "Цифровые медиа", desc: "Контент-стратегия, SMM, подкасты, видеопроизводство. Инструменты цифровой эпохи." },
-  { icon: "TrendingUp", title: "Управление в креативных индустриях", desc: "Продюсирование проектов, культурный менеджмент, монетизация творческих идей." },
+  {
+    icon: "Hammer",
+    color: "#1A4F9C",
+    label: "01",
+    title: "Ремесло и народно-художественные промыслы",
+    desc: "Поддержка мастеров и ремесленников, сохранение традиционных технологий, развитие рынка аутентичных изделий.",
+    tags: ["Керамика", "Ткачество", "Ювелирное дело", "Резьба"],
+  },
+  {
+    icon: "UtensilsCrossed",
+    color: "#F26522",
+    label: "02",
+    title: "Гастрономия и сфера гостеприимства",
+    desc: "Развитие ресторанного бизнеса, гастрономического туризма и HoReCa-индустрии в регионе.",
+    tags: ["Рестораны", "Туризм", "Отельный бизнес", "Фермерство"],
+  },
+  {
+    icon: "Scissors",
+    color: "#2E6DC2",
+    label: "03",
+    title: "Мода и дизайн",
+    desc: "Поддержка дизайнеров одежды и аксессуаров, развитие локальных брендов, выход на федеральный рынок.",
+    tags: ["Одежда", "Аксессуары", "Брендинг", "Текстиль"],
+  },
+  {
+    icon: "Brush",
+    color: "#F26522",
+    label: "04",
+    title: "АРТ-искусство",
+    desc: "Поддержка художников, скульпторов, арт-объединений, развитие галерейного рынка и паблик-арта.",
+    tags: ["Живопись", "Скульптура", "Инсталляции", "Графика"],
+  },
 ];
 
 const PROJECTS = [
-  { tag: "Выставка", title: "Образ города", desc: "Групповая выставка фотографов и иллюстраторов об архитектурной идентичности российских городов.", year: "2024" },
-  { tag: "Альбом", title: "Новые голоса", desc: "Сборник дебютных треков 12 музыкантов, прошедших программу центра. Доступен на всех площадках.", year: "2024" },
-  { tag: "Документальный фильм", title: "Индустрия будущего", desc: "Документальный проект о трансформации творческих профессий в эпоху цифровых технологий.", year: "2023" },
-  { tag: "Антология", title: "Первые слова", desc: "Литературная антология рассказов и стихотворений 30 авторов из мастерских центра.", year: "2023" },
+  { tag: "Выставка", title: "Руки мастера", desc: "Региональная выставка изделий народно-художественных промыслов. 45 участников из 12 районов.", year: "2024" },
+  { tag: "Фестиваль", title: "Вкус региона", desc: "Гастрономический фестиваль с участием 30 шеф-поваров, представивших локальные кулинарные традиции.", year: "2024" },
+  { tag: "Показ", title: "Местный бренд", desc: "Первый региональный показ коллекций дизайнеров одежды — участников программы центра.", year: "2023" },
+  { tag: "Арт-резиденция", title: "Открытая студия", desc: "Трёхмесячная программа поддержки художников: мастерские, наставники, выставка итоговых работ.", year: "2023" },
 ];
 
 const EVENTS_DATA: Record<string, { title: string; type: string; time: string }[]> = {
-  "2026-04-17": [{ title: "Открытая лекция: Дизайн-мышление", type: "Лекция", time: "18:00" }],
-  "2026-04-19": [{ title: "Мастер-класс по фотографии", type: "Мастер-класс", time: "12:00" }],
-  "2026-04-22": [{ title: "Питчинг творческих проектов", type: "Мероприятие", time: "17:00" }],
-  "2026-04-24": [{ title: "Кинопоказ + обсуждение", type: "Кино", time: "19:30" }],
-  "2026-04-26": [{ title: "Воркшоп: Сторителлинг в цифре", type: "Воркшоп", time: "11:00" }],
-  "2026-04-28": [{ title: "Нетворкинг для творческих", type: "Нетворкинг", time: "19:00" }],
-  "2026-05-03": [{ title: "Лекция: Управление культурными проектами", type: "Лекция", time: "18:00" }],
-  "2026-05-07": [{ title: "Мастер-класс по звукозаписи", type: "Мастер-класс", time: "14:00" }],
-  "2026-05-10": [{ title: "Открытие выставки «Новый взгляд»", type: "Выставка", time: "17:00" }],
-  "2026-05-15": [{ title: "Воркшоп: Режиссура короткого метра", type: "Воркшоп", time: "10:00" }],
-  "2026-05-20": [{ title: "Форум креативных индустрий", type: "Форум", time: "09:00" }],
-  "2026-05-24": [{ title: "Питчинг стартапов в сфере культуры", type: "Мероприятие", time: "16:00" }],
+  "2026-04-17": [{ title: "Мастер-класс: Роспись по дереву", type: "Мастер-класс", time: "11:00" }],
+  "2026-04-19": [{ title: "Лекция: Как открыть ресторан", type: "Лекция", time: "15:00" }],
+  "2026-04-22": [{ title: "Питчинг локальных брендов", type: "Мероприятие", time: "17:00" }],
+  "2026-04-24": [{ title: "Арт-воркшоп: Монотипия", type: "Воркшоп", time: "12:00" }],
+  "2026-04-26": [{ title: "Нетворкинг для ремесленников", type: "Нетворкинг", time: "18:00" }],
+  "2026-04-28": [{ title: "Семинар: Гастротуризм 2026", type: "Семинар", time: "14:00" }],
+  "2026-05-03": [{ title: "Мастер-класс: Ювелирное дело", type: "Мастер-класс", time: "12:00" }],
+  "2026-05-07": [{ title: "Открытие выставки «Ремесло»", type: "Выставка", time: "17:00" }],
+  "2026-05-10": [{ title: "Лекция: Маркетинг для дизайнеров", type: "Лекция", time: "16:00" }],
+  "2026-05-15": [{ title: "Форум «Креативный регион»", type: "Форум", time: "09:00" }],
+  "2026-05-20": [{ title: "Питчинг арт-проектов", type: "Мероприятие", time: "16:00" }],
+  "2026-05-24": [{ title: "Мастер-класс: Гончарное искусство", type: "Мастер-класс", time: "11:00" }],
 };
 
 const EVENT_TYPE_COLORS: Record<string, string> = {
@@ -47,7 +79,7 @@ const EVENT_TYPE_COLORS: Record<string, string> = {
   "Мастер-класс": "bg-amber-100 text-amber-800",
   "Воркшоп": "bg-green-100 text-green-800",
   "Мероприятие": "bg-purple-100 text-purple-800",
-  "Кино": "bg-red-100 text-red-800",
+  "Семинар": "bg-sky-100 text-sky-800",
   "Нетворкинг": "bg-teal-100 text-teal-800",
   "Выставка": "bg-rose-100 text-rose-800",
   "Форум": "bg-indigo-100 text-indigo-800",
@@ -98,10 +130,13 @@ export default function Index() {
     <div className="min-h-screen bg-background font-body">
 
       {/* NAV */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[hsl(220,45%,15%)] border-b border-white/10">
+      <nav style={{ background: BLUE }} className="fixed top-0 left-0 right-0 z-50 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <button onClick={() => scrollTo("hero")} className="font-display text-2xl font-semibold tracking-wide text-white">
-            ЦКИ<span className="text-[hsl(45,80%,52%)]">.</span>
+          <button onClick={() => scrollTo("hero")} className="flex items-center gap-2">
+            <span className="font-display text-xl font-bold tracking-wide text-white">
+              Мой<span style={{ color: ORANGE }}>Бизнес</span>
+            </span>
+            <span className="hidden sm:block text-white/40 text-xs font-body">/ Центр Креативных Индустрий</span>
           </button>
           <div className="hidden md:flex items-center gap-8">
             {NAV_ITEMS.map(item => (
@@ -113,7 +148,7 @@ export default function Index() {
           </button>
         </div>
         {mobileOpen && (
-          <div className="md:hidden bg-[hsl(220,45%,15%)] border-t border-white/10 px-6 py-4 flex flex-col gap-4">
+          <div className="md:hidden border-t border-white/10 px-6 py-4 flex flex-col gap-4" style={{ background: BLUE }}>
             {NAV_ITEMS.map(item => (
               <button key={item.id} onClick={() => { scrollTo(item.id); setMobileOpen(false); }} className="nav-link text-left">
                 {item.label}
@@ -125,23 +160,30 @@ export default function Index() {
 
       {/* HERO */}
       <section id="hero" className="relative h-screen flex items-end overflow-hidden">
-        <img src={HERO_IMAGE} alt="ЦКИ" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,45%,8%)] via-[hsl(220,45%,12%)]/60 to-transparent" />
+        <img src={HERO_IMAGE} alt="Центр Креативных Индустрий" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0" style={{ background: `linear-gradient(to top, ${BLUE_DARK} 0%, ${BLUE}99 40%, transparent 100%)` }} />
+
+        {/* Декоративная полоса */}
+        <div className="absolute top-0 left-0 right-0 h-1" style={{ background: ORANGE }} />
+
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pb-20 w-full">
           <div className="max-w-3xl" style={{ animation: "fadeUp 0.8s ease 0.2s both" }}>
-            <p className="font-body text-xs tracking-[0.35em] uppercase text-[hsl(45,80%,52%)] mb-5">
-              Центр Креативных Индустрий
-            </p>
+            <div className="flex items-center gap-3 mb-5">
+              <div className="h-px w-10" style={{ background: ORANGE }} />
+              <p className="font-body text-xs tracking-[0.35em] uppercase text-white/80">
+                Мой бизнес · Центр Креативных Индустрий
+              </p>
+            </div>
             <h1 className="font-display text-5xl md:text-7xl font-light text-white leading-[1.1] mb-6">
-              Место, где идеи<br />
-              <em className="italic text-[hsl(45,70%,65%)]">становятся</em> реальностью
+              Творчество как<br />
+              <em className="italic" style={{ color: ORANGE }}>основа бизнеса</em>
             </h1>
-            <p className="font-body text-white/65 text-lg font-light leading-relaxed mb-10 max-w-xl">
-              Профессиональная среда для развития творческих индустрий, реализации проектов и формирования сообщества.
+            <p className="font-body text-white/70 text-lg font-light leading-relaxed mb-10 max-w-xl">
+              Центр поддержки предпринимателей в сфере креативных индустрий. Ремесло, гастрономия, мода и арт — ваш путь к успешному делу.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button onClick={() => scrollTo("directions")} className="btn-gold">Наши направления</button>
-              <button onClick={() => scrollTo("events")} className="btn-outline-gold">Ближайшие события</button>
+              <button onClick={() => scrollTo("directions")} className="btn-primary">Наши направления</button>
+              <button onClick={() => scrollTo("events")} className="btn-outline">Календарь событий</button>
             </div>
           </div>
         </div>
@@ -155,23 +197,26 @@ export default function Index() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <p className="font-body text-xs tracking-[0.3em] uppercase text-[hsl(45,80%,52%)] mb-4">О центре</p>
-              <h2 className="font-display text-4xl md:text-5xl font-light text-[hsl(220,45%,15%)] leading-tight mb-6 gold-line">
-                Профессиональная платформа для творческих профессионалов
+              <div className="flex items-center gap-3 mb-4">
+                <div className="h-px w-8" style={{ background: ORANGE }} />
+                <p className="font-body text-xs tracking-[0.3em] uppercase" style={{ color: ORANGE }}>О центре</p>
+              </div>
+              <h2 className="font-display text-4xl md:text-5xl font-light leading-tight mb-6 orange-line" style={{ color: BLUE }}>
+                Поддержка предпринимателей в сфере творческих индустрий
               </h2>
             </div>
             <div className="space-y-5">
-              <p className="font-body text-[hsl(220,15%,35%)] leading-relaxed">
-                Центр Креативных Индустрий — это институция, объединяющая профессионалов в сфере дизайна, музыки, кино, литературы и цифровых медиа. Мы создаём условия для развития творческого потенциала, реализации амбициозных проектов и построения устойчивых карьер.
+              <p className="font-body text-[hsl(218,15%,35%)] leading-relaxed">
+                Центр Креативных Индустрий — специализированное подразделение центра «Мой бизнес», созданное для поддержки предпринимателей в наиболее быстрорастущих секторах экономики: народных промыслах, гастрономии, моде и арт-индустрии.
               </p>
-              <p className="font-body text-[hsl(220,15%,35%)] leading-relaxed">
-                Наша миссия — стать ведущим центром развития креативной экономики, предоставляя участникам доступ к экспертизе, ресурсам и партнёрским связям на региональном и федеральном уровне.
+              <p className="font-body text-[hsl(218,15%,35%)] leading-relaxed">
+                Мы предоставляем консультации, образовательные программы, помощь в получении грантов и субсидий, а также инфраструктуру для реализации ваших проектов.
               </p>
-              <div className="grid grid-cols-3 gap-6 pt-6 border-t border-[hsl(220,20%,88%)]">
-                {[["150+", "Участников"], ["6", "Направлений"], ["50+", "Проектов"]].map(([num, label]) => (
+              <div className="grid grid-cols-3 gap-6 pt-6 border-t border-[hsl(218,20%,88%)]">
+                {[["200+", "Участников"], ["4", "Направления"], ["60+", "Проектов"]].map(([num, label]) => (
                   <div key={label}>
-                    <p className="font-display text-3xl font-semibold text-[hsl(220,45%,15%)]">{num}</p>
-                    <p className="font-body text-xs text-[hsl(220,15%,50%)] tracking-wide uppercase mt-1">{label}</p>
+                    <p className="font-display text-3xl font-semibold" style={{ color: BLUE }}>{num}</p>
+                    <p className="font-body text-xs tracking-wide uppercase mt-1" style={{ color: ORANGE }}>{label}</p>
                   </div>
                 ))}
               </div>
@@ -181,24 +226,46 @@ export default function Index() {
       </section>
 
       {/* DIRECTIONS */}
-      <section id="directions" className="section-padding" style={{ background: "hsl(40,20%,96%)" }}>
+      <section id="directions" className="section-padding" style={{ background: GRAY_BG }}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <p className="font-body text-xs tracking-[0.3em] uppercase text-[hsl(45,80%,52%)] mb-4">Направления</p>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[hsl(220,45%,15%)] gold-line-center">
-              Шесть сфер развития
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="h-px w-8" style={{ background: ORANGE }} />
+              <p className="font-body text-xs tracking-[0.3em] uppercase" style={{ color: ORANGE }}>Направления</p>
+              <div className="h-px w-8" style={{ background: ORANGE }} />
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-light orange-line-center" style={{ color: BLUE }}>
+              Четыре сферы поддержки
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid md:grid-cols-2 gap-6">
             {DIRECTIONS.map((dir) => (
-              <div key={dir.title} className="bg-white p-8 border border-[hsl(220,20%,88%)] card-hover group cursor-pointer">
-                <div className="w-10 h-10 rounded flex items-center justify-center mb-5 bg-[hsl(220,45%,15%)]/5 group-hover:bg-[hsl(45,80%,52%)]/15 transition-colors">
-                  <Icon name={dir.icon} size={18} className="text-[hsl(220,45%,15%)] group-hover:text-[hsl(45,65%,42%)] transition-colors" fallback="Layers" />
+              <div key={dir.title} className="bg-white p-8 border border-[hsl(218,20%,88%)] card-hover group cursor-pointer relative overflow-hidden">
+                {/* Цветная полоска слева */}
+                <div className="absolute left-0 top-0 bottom-0 w-1" style={{ background: dir.color }} />
+                <div className="flex items-start gap-5">
+                  <div className="shrink-0">
+                    <p className="font-display text-5xl font-light" style={{ color: `${dir.color}22` }}>{dir.label}</p>
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-9 h-9 rounded flex items-center justify-center" style={{ background: `${dir.color}15` }}>
+                        <Icon name={dir.icon} size={17} fallback="Layers" style={{ color: dir.color }} />
+                      </div>
+                      <h3 className="font-display text-xl font-semibold leading-tight" style={{ color: BLUE }}>{dir.title}</h3>
+                    </div>
+                    <p className="font-body text-sm text-[hsl(218,15%,45%)] leading-relaxed mb-4">{dir.desc}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {dir.tags.map(tag => (
+                        <span key={tag} className="font-body text-xs px-2 py-1 rounded-sm border border-[hsl(218,20%,85%)] text-[hsl(218,15%,50%)]">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                <h3 className="font-display text-xl font-semibold text-[hsl(220,45%,15%)] mb-3 leading-tight">{dir.title}</h3>
-                <p className="font-body text-sm text-[hsl(220,15%,45%)] leading-relaxed">{dir.desc}</p>
-                <div className="mt-5 flex items-center gap-1 text-[hsl(45,65%,42%)] text-xs font-body font-medium tracking-wider uppercase opacity-0 group-hover:opacity-100 transition-opacity">
-                  Узнать подробнее <Icon name="ArrowRight" size={12} />
+                <div className="mt-5 pt-4 border-t border-[hsl(218,20%,90%)] flex items-center gap-2 text-xs font-body font-medium tracking-wider uppercase opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: ORANGE }}>
+                  Узнать о программах <Icon name="ArrowRight" size={12} />
                 </div>
               </div>
             ))}
@@ -207,11 +274,14 @@ export default function Index() {
       </section>
 
       {/* PROJECTS */}
-      <section id="projects" className="section-padding bg-[hsl(220,45%,15%)]">
+      <section id="projects" className="section-padding" style={{ background: BLUE }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-14">
-            <p className="font-body text-xs tracking-[0.3em] uppercase text-[hsl(45,80%,52%)] mb-4">Проекты</p>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-white gold-line">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="h-px w-8" style={{ background: ORANGE }} />
+              <p className="font-body text-xs tracking-[0.3em] uppercase" style={{ color: ORANGE }}>Проекты</p>
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-white orange-line">
               Результаты наших участников
             </h2>
           </div>
@@ -219,14 +289,14 @@ export default function Index() {
             {PROJECTS.map((p) => (
               <div key={p.title} className="border border-white/10 p-8 card-hover group bg-white/5 hover:bg-white/10">
                 <div className="flex items-start justify-between mb-5">
-                  <span className="font-body text-xs tracking-widest uppercase text-[hsl(45,80%,52%)] border border-[hsl(45,80%,52%)]/40 px-3 py-1">
+                  <span className="font-body text-xs tracking-widest uppercase px-3 py-1 border" style={{ color: ORANGE, borderColor: `${ORANGE}60` }}>
                     {p.tag}
                   </span>
                   <span className="font-body text-xs text-white/30">{p.year}</span>
                 </div>
                 <h3 className="font-display text-2xl font-semibold text-white mb-3">{p.title}</h3>
                 <p className="font-body text-sm text-white/60 leading-relaxed">{p.desc}</p>
-                <div className="mt-6 border-t border-white/10 pt-5 flex items-center gap-2 text-[hsl(45,80%,52%)] text-xs font-body tracking-widest uppercase">
+                <div className="mt-6 border-t border-white/10 pt-5 flex items-center gap-2 text-xs font-body tracking-widest uppercase" style={{ color: ORANGE }}>
                   <span>Подробнее</span>
                   <Icon name="ArrowRight" size={12} />
                 </div>
@@ -240,11 +310,15 @@ export default function Index() {
       <section id="events" className="section-padding bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <p className="font-body text-xs tracking-[0.3em] uppercase text-[hsl(45,80%,52%)] mb-4">События</p>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[hsl(220,45%,15%)] gold-line-center">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="h-px w-8" style={{ background: ORANGE }} />
+              <p className="font-body text-xs tracking-[0.3em] uppercase" style={{ color: ORANGE }}>События</p>
+              <div className="h-px w-8" style={{ background: ORANGE }} />
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-light orange-line-center" style={{ color: BLUE }}>
               Интерактивный календарь
             </h2>
-            <p className="font-body text-[hsl(220,15%,50%)] mt-6 text-sm">
+            <p className="font-body text-[hsl(218,15%,50%)] mt-6 text-sm">
               Выберите дату, чтобы увидеть запланированные мероприятия
             </p>
           </div>
@@ -252,8 +326,8 @@ export default function Index() {
           <div className="grid lg:grid-cols-5 gap-8">
             {/* Calendar */}
             <div className="lg:col-span-3">
-              <div className="border border-[hsl(220,20%,88%)] overflow-hidden shadow-sm">
-                <div className="bg-[hsl(220,45%,15%)] px-6 py-4 flex items-center justify-between">
+              <div className="border border-[hsl(218,20%,88%)] overflow-hidden shadow-sm">
+                <div className="px-6 py-4 flex items-center justify-between" style={{ background: BLUE }}>
                   <button onClick={prevMonth} className="text-white/60 hover:text-white transition-colors p-1">
                     <Icon name="ChevronLeft" size={20} />
                   </button>
@@ -264,14 +338,14 @@ export default function Index() {
                     <Icon name="ChevronRight" size={20} />
                   </button>
                 </div>
-                <div className="grid grid-cols-7 border-b border-[hsl(220,20%,88%)]">
+                <div className="grid grid-cols-7 border-b border-[hsl(218,20%,88%)]">
                   {["Пн","Вт","Ср","Чт","Пт","Сб","Вс"].map(d => (
-                    <div key={d} className="py-3 text-center font-body text-xs tracking-widest uppercase text-[hsl(220,15%,55%)]">{d}</div>
+                    <div key={d} className="py-3 text-center font-body text-xs tracking-widest uppercase text-[hsl(218,15%,55%)]">{d}</div>
                   ))}
                 </div>
                 <div className="grid grid-cols-7">
                   {Array.from({ length: firstDay }).map((_, i) => (
-                    <div key={`e-${i}`} className="h-12 border-b border-r border-[hsl(220,20%,88%)]/50" />
+                    <div key={`e-${i}`} className="h-12 border-b border-r border-[hsl(218,20%,88%)]/50" />
                   ))}
                   {Array.from({ length: daysInMonth }).map((_, i) => {
                     const day = i + 1;
@@ -283,14 +357,17 @@ export default function Index() {
                       <button
                         key={day}
                         onClick={() => setSelectedDate(isSelected ? null : key)}
-                        className={`h-12 flex flex-col items-center justify-center relative border-b border-r border-[hsl(220,20%,88%)]/50 transition-colors
-                          ${isSelected ? "bg-[hsl(220,45%,15%)] text-white" : "hover:bg-[hsl(40,20%,96%)]"}`}
+                        className="h-12 flex flex-col items-center justify-center relative border-b border-r border-[hsl(218,20%,88%)]/50 transition-colors"
+                        style={isSelected ? { background: BLUE } : undefined}
+                        onMouseEnter={e => { if (!isSelected) (e.currentTarget as HTMLElement).style.background = GRAY_BG; }}
+                        onMouseLeave={e => { if (!isSelected) (e.currentTarget as HTMLElement).style.background = ""; }}
                       >
-                        <span className={`font-body text-sm ${isSelected ? "text-white" : isToday ? "font-bold text-[hsl(220,45%,15%)]" : "text-[hsl(220,15%,40%)]"}`}>
+                        <span className={`font-body text-sm ${isSelected ? "text-white" : isToday ? "font-bold" : "text-[hsl(218,15%,40%)]"}`}
+                          style={isToday && !isSelected ? { color: BLUE } : undefined}>
                           {day}
                         </span>
                         {hasEv && (
-                          <span className="absolute bottom-1.5 w-1.5 h-1.5 rounded-full bg-[hsl(45,80%,52%)]" />
+                          <span className="absolute bottom-1.5 w-1.5 h-1.5 rounded-full" style={{ background: ORANGE }} />
                         )}
                       </button>
                     );
@@ -303,54 +380,54 @@ export default function Index() {
             <div className="lg:col-span-2">
               {selectedDate && selectedEvents.length > 0 ? (
                 <div className="space-y-4">
-                  <p className="font-body text-xs tracking-[0.2em] uppercase text-[hsl(220,15%,50%)] mb-6">
-                    {selectedDate.split("-").slice(1).reverse().join(".")} — {MONTH_NAMES[parseInt(selectedDate.split("-")[1]) - 1]}
+                  <p className="font-body text-xs tracking-[0.2em] uppercase text-[hsl(218,15%,50%)] mb-6">
+                    {selectedDate.split("-")[2]}.{selectedDate.split("-")[1]} — {MONTH_NAMES[parseInt(selectedDate.split("-")[1]) - 1]}
                   </p>
                   {selectedEvents.map((ev, idx) => (
-                    <div key={idx} className="border border-[hsl(220,20%,88%)] p-6 card-hover bg-white">
+                    <div key={idx} className="border border-[hsl(218,20%,88%)] p-6 card-hover bg-white">
                       <div className="flex items-center justify-between mb-3">
                         <span className={`font-body text-xs px-2 py-0.5 rounded ${EVENT_TYPE_COLORS[ev.type] || "bg-gray-100 text-gray-800"}`}>
                           {ev.type}
                         </span>
-                        <span className="font-body text-sm font-medium text-[hsl(220,45%,15%)]">{ev.time}</span>
+                        <span className="font-body text-sm font-medium" style={{ color: BLUE }}>{ev.time}</span>
                       </div>
-                      <h4 className="font-display text-xl font-semibold text-[hsl(220,45%,15%)] leading-tight mb-4">{ev.title}</h4>
-                      <button className="btn-gold text-xs py-2 px-5">Зарегистрироваться</button>
+                      <h4 className="font-display text-xl font-semibold leading-tight mb-4" style={{ color: BLUE }}>{ev.title}</h4>
+                      <button className="btn-primary text-xs py-2 px-5">Зарегистрироваться</button>
                     </div>
                   ))}
                 </div>
               ) : selectedDate ? (
-                <div className="flex items-center justify-center text-center py-16 border border-[hsl(220,20%,88%)]">
+                <div className="flex items-center justify-center text-center py-16 border border-[hsl(218,20%,88%)]">
                   <div>
-                    <Icon name="CalendarX" size={36} className="text-[hsl(220,15%,70%)] mx-auto mb-3" />
-                    <p className="font-body text-sm text-[hsl(220,15%,50%)]">В этот день мероприятий нет</p>
+                    <Icon name="CalendarX" size={36} className="text-[hsl(218,15%,70%)] mx-auto mb-3" />
+                    <p className="font-body text-sm text-[hsl(218,15%,50%)]">В этот день мероприятий нет</p>
                   </div>
                 </div>
               ) : (
-                <div className="border border-[hsl(220,20%,88%)] p-8 min-h-[320px] flex flex-col justify-between" style={{ background: "hsl(40,20%,96%)" }}>
+                <div className="border border-[hsl(218,20%,88%)] p-8 min-h-[320px] flex flex-col justify-between" style={{ background: GRAY_BG }}>
                   <div>
-                    <p className="font-body text-xs tracking-[0.2em] uppercase text-[hsl(45,65%,42%)] mb-3">Ближайшие события</p>
-                    <h3 className="font-display text-2xl font-light text-[hsl(220,45%,15%)] mb-6 leading-tight">
-                      Нажмите на дату с золотой точкой
+                    <p className="font-body text-xs tracking-[0.2em] uppercase mb-3" style={{ color: ORANGE }}>Ближайшие события</p>
+                    <h3 className="font-display text-2xl font-light mb-6 leading-tight" style={{ color: BLUE }}>
+                      Нажмите на дату<br />с оранжевой точкой
                     </h3>
                     <div className="space-y-3">
                       {Object.entries(EVENTS_DATA).slice(0, 5).map(([dateKey, evs]) => (
                         <button
                           key={dateKey}
                           onClick={() => setSelectedDate(dateKey)}
-                          className="w-full text-left flex items-center gap-3 py-2 border-b border-[hsl(220,20%,88%)] group"
+                          className="w-full text-left flex items-center gap-3 py-2 border-b border-[hsl(218,20%,88%)] group"
                         >
-                          <span className="font-body text-xs text-[hsl(220,15%,55%)] w-12 shrink-0">
+                          <span className="font-body text-xs text-[hsl(218,15%,55%)] w-12 shrink-0">
                             {dateKey.split("-")[2]}.{dateKey.split("-")[1]}
                           </span>
-                          <span className="font-body text-sm text-[hsl(220,15%,35%)] group-hover:text-[hsl(220,45%,15%)] transition-colors leading-tight">
+                          <span className="font-body text-sm text-[hsl(218,15%,35%)] group-hover:text-[hsl(218,73%,35%)] transition-colors leading-tight">
                             {evs[0].title}
                           </span>
                         </button>
                       ))}
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 text-[hsl(45,65%,42%)] text-xs font-body tracking-widest uppercase mt-6 cursor-pointer">
+                  <div className="flex items-center gap-2 text-xs font-body tracking-widest uppercase mt-6 cursor-pointer" style={{ color: ORANGE }}>
                     <span>Все события</span>
                     <Icon name="ArrowRight" size={12} />
                   </div>
@@ -362,12 +439,15 @@ export default function Index() {
       </section>
 
       {/* CONTACTS */}
-      <section id="contacts" className="section-padding" style={{ background: "hsl(40,20%,96%)" }}>
+      <section id="contacts" className="section-padding" style={{ background: GRAY_BG }}>
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16">
             <div>
-              <p className="font-body text-xs tracking-[0.3em] uppercase text-[hsl(45,80%,52%)] mb-4">Контакты</p>
-              <h2 className="font-display text-4xl md:text-5xl font-light text-[hsl(220,45%,15%)] leading-tight mb-10 gold-line">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="h-px w-8" style={{ background: ORANGE }} />
+                <p className="font-body text-xs tracking-[0.3em] uppercase" style={{ color: ORANGE }}>Контакты</p>
+              </div>
+              <h2 className="font-display text-4xl md:text-5xl font-light leading-tight mb-10 orange-line" style={{ color: BLUE }}>
                 Свяжитесь с нами
               </h2>
               <div className="space-y-6">
@@ -378,42 +458,48 @@ export default function Index() {
                   { icon: "Clock", label: "Режим работы", value: "Пн–Пт: 09:00–21:00\nСб–Вс: 10:00–18:00" },
                 ].map(c => (
                   <div key={c.label} className="flex gap-4">
-                    <div className="w-9 h-9 bg-[hsl(220,45%,15%)]/8 flex items-center justify-center shrink-0 mt-0.5">
-                      <Icon name={c.icon} size={15} className="text-[hsl(220,45%,15%)]" fallback="Info" />
+                    <div className="w-9 h-9 flex items-center justify-center shrink-0 mt-0.5" style={{ background: `${BLUE}12` }}>
+                      <Icon name={c.icon} size={15} fallback="Info" style={{ color: BLUE }} />
                     </div>
                     <div>
-                      <p className="font-body text-xs tracking-wider uppercase text-[hsl(220,15%,50%)] mb-1">{c.label}</p>
-                      <p className="font-body text-sm text-[hsl(220,15%,30%)] whitespace-pre-line">{c.value}</p>
+                      <p className="font-body text-xs tracking-wider uppercase text-[hsl(218,15%,50%)] mb-1">{c.label}</p>
+                      <p className="font-body text-sm text-[hsl(218,15%,30%)] whitespace-pre-line">{c.value}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="bg-white border border-[hsl(220,20%,88%)] p-8 shadow-sm">
-              <h3 className="font-display text-2xl font-semibold text-[hsl(220,45%,15%)] mb-6">Отправить запрос</h3>
+            <div className="bg-white border border-[hsl(218,20%,88%)] p-8 shadow-sm">
+              <h3 className="font-display text-2xl font-semibold mb-6" style={{ color: BLUE }}>Отправить запрос</h3>
               <div className="space-y-4">
                 {[
                   { label: "Имя", type: "text", placeholder: "Ваше имя" },
                   { label: "E-mail", type: "email", placeholder: "your@email.com" },
                 ].map(f => (
                   <div key={f.label}>
-                    <label className="font-body text-xs tracking-wider uppercase text-[hsl(220,15%,50%)] block mb-2">{f.label}</label>
+                    <label className="font-body text-xs tracking-wider uppercase text-[hsl(218,15%,50%)] block mb-2">{f.label}</label>
                     <input
                       type={f.type}
                       placeholder={f.placeholder}
-                      className="w-full border border-[hsl(220,20%,88%)] px-4 py-3 font-body text-sm text-[hsl(220,35%,15%)] focus:outline-none focus:border-[hsl(220,45%,15%)] transition-colors bg-white"
+                      className="w-full border border-[hsl(218,20%,88%)] px-4 py-3 font-body text-sm focus:outline-none transition-colors bg-white"
+                      style={{ color: BLUE }}
+                      onFocus={e => (e.target.style.borderColor = BLUE)}
+                      onBlur={e => (e.target.style.borderColor = "")}
                     />
                   </div>
                 ))}
                 <div>
-                  <label className="font-body text-xs tracking-wider uppercase text-[hsl(220,15%,50%)] block mb-2">Сообщение</label>
+                  <label className="font-body text-xs tracking-wider uppercase text-[hsl(218,15%,50%)] block mb-2">Сообщение</label>
                   <textarea
                     rows={4}
                     placeholder="Ваш вопрос или запрос..."
-                    className="w-full border border-[hsl(220,20%,88%)] px-4 py-3 font-body text-sm text-[hsl(220,35%,15%)] focus:outline-none focus:border-[hsl(220,45%,15%)] transition-colors resize-none bg-white"
+                    className="w-full border border-[hsl(218,20%,88%)] px-4 py-3 font-body text-sm focus:outline-none transition-colors resize-none bg-white"
+                    style={{ color: BLUE }}
+                    onFocus={e => (e.target.style.borderColor = BLUE)}
+                    onBlur={e => (e.target.style.borderColor = "")}
                   />
                 </div>
-                <button className="btn-gold w-full justify-center">
+                <button className="btn-primary w-full justify-center">
                   Отправить сообщение
                 </button>
               </div>
@@ -423,13 +509,15 @@ export default function Index() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-[hsl(220,45%,15%)] border-t border-white/10 py-10 px-6 md:px-12">
+      <footer className="border-t border-white/10 py-10 px-6 md:px-12" style={{ background: BLUE }}>
+        {/* Оранжевая полоса сверху */}
+        <div className="h-1 -mt-10 mb-10 -mx-6 md:-mx-12" style={{ background: ORANGE }} />
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <span className="font-display text-2xl font-semibold text-white">
-              ЦКИ<span className="text-[hsl(45,80%,52%)]">.</span>
+            <span className="font-display text-xl font-bold text-white">
+              Мой<span style={{ color: ORANGE }}>Бизнес</span>
             </span>
-            <span className="text-white/30 text-xs font-body hidden md:block">Центр Креативных Индустрий</span>
+            <span className="text-white/30 text-xs font-body hidden md:block">· Центр Креативных Индустрий</span>
           </div>
           <div className="flex flex-wrap justify-center gap-5">
             {NAV_ITEMS.map(item => (

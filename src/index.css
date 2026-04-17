@@ -4,51 +4,54 @@
 
 @layer base {
   :root {
-    --background: 220 25% 97%;
-    --foreground: 220 35% 10%;
+    --background: 0 0% 98%;
+    --foreground: 220 40% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 35% 10%;
+    --card-foreground: 220 40% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 35% 10%;
+    --popover-foreground: 220 40% 12%;
 
-    --primary: 220 45% 15%;
-    --primary-foreground: 45 80% 70%;
+    /* Мой бизнес: синий основной */
+    --primary: 218 73% 35%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 20% 92%;
-    --secondary-foreground: 220 35% 15%;
+    --secondary: 218 30% 94%;
+    --secondary-foreground: 218 73% 28%;
 
-    --muted: 220 15% 93%;
-    --muted-foreground: 220 15% 45%;
+    --muted: 218 20% 94%;
+    --muted-foreground: 218 15% 50%;
 
-    --accent: 45 80% 52%;
-    --accent-foreground: 220 45% 10%;
+    /* Мой бизнес: оранжевый акцент */
+    --accent: 23 89% 55%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 20% 88%;
-    --input: 220 20% 88%;
-    --ring: 220 45% 15%;
+    --border: 218 20% 88%;
+    --input: 218 20% 88%;
+    --ring: 218 73% 35%;
 
     --radius: 0.25rem;
 
-    /* Custom brand tokens */
-    --navy: 220 45% 15%;
-    --navy-light: 220 35% 22%;
-    --gold: 45 80% 52%;
-    --gold-light: 45 70% 65%;
-    --cream: 40 30% 96%;
+    /* Brand tokens: Мой бизнес */
+    --mb-blue: 218 73% 35%;
+    --mb-blue-dark: 220 78% 22%;
+    --mb-blue-light: 218 60% 48%;
+    --mb-orange: 23 89% 55%;
+    --mb-orange-light: 28 95% 65%;
+    --mb-gray: 218 15% 96%;
 
-    --sidebar-background: 220 45% 12%;
-    --sidebar-foreground: 45 80% 70%;
-    --sidebar-primary: 45 80% 52%;
-    --sidebar-primary-foreground: 220 45% 10%;
-    --sidebar-accent: 220 35% 20%;
-    --sidebar-accent-foreground: 45 60% 80%;
-    --sidebar-border: 220 30% 25%;
-    --sidebar-ring: 45 80% 52%;
+    --sidebar-background: 218 73% 35%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 23 89% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 218 60% 48%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 218 50% 28%;
+    --sidebar-ring: 23 89% 55%;
   }
 }
 
@@ -78,22 +81,22 @@
     font-family: "IBM Plex Sans", sans-serif;
   }
 
-  .gold-line::after {
+  .orange-line::after {
     content: "";
     display: block;
-    width: 60px;
-    height: 2px;
-    background: hsl(var(--gold));
-    margin-top: 12px;
+    width: 48px;
+    height: 3px;
+    background: hsl(var(--mb-orange));
+    margin-top: 14px;
   }
 
-  .gold-line-center::after {
+  .orange-line-center::after {
     content: "";
     display: block;
-    width: 60px;
-    height: 2px;
-    background: hsl(var(--gold));
-    margin: 12px auto 0;
+    width: 48px;
+    height: 3px;
+    background: hsl(var(--mb-orange));
+    margin: 14px auto 0;
   }
 
   .section-padding {
@@ -110,8 +113,8 @@
     bottom: -4px;
     left: 0;
     width: 0;
-    height: 1px;
-    background: hsl(var(--gold));
+    height: 2px;
+    background: hsl(var(--mb-orange));
     transition: width 0.3s ease;
   }
 
@@ -119,20 +122,20 @@
     width: 100%;
   }
 
-  .btn-gold {
-    @apply inline-flex items-center gap-2 bg-[hsl(var(--gold))] text-[hsl(var(--navy))] px-8 py-3 font-body font-semibold text-sm tracking-widest uppercase transition-all duration-300 hover:bg-[hsl(45,70%,60%)] hover:shadow-lg;
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-[hsl(23,89%,55%)] text-white px-8 py-3 font-body font-semibold text-sm tracking-widest uppercase transition-all duration-300 hover:bg-[hsl(23,89%,48%)] hover:shadow-lg;
   }
 
-  .btn-outline-gold {
-    @apply inline-flex items-center gap-2 border border-[hsl(var(--gold))] text-[hsl(var(--gold))] px-8 py-3 font-body font-semibold text-sm tracking-widest uppercase transition-all duration-300 hover:bg-[hsl(var(--gold))] hover:text-[hsl(var(--navy))];
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border-2 border-white text-white px-8 py-3 font-body font-semibold text-sm tracking-widest uppercase transition-all duration-300 hover:bg-white hover:text-[hsl(218,73%,35%)];
+  }
+
+  .btn-outline-blue {
+    @apply inline-flex items-center gap-2 border-2 border-[hsl(218,73%,35%)] text-[hsl(218,73%,35%)] px-8 py-3 font-body font-semibold text-sm tracking-widest uppercase transition-all duration-300 hover:bg-[hsl(218,73%,35%)] hover:text-white;
   }
 
   .card-hover {
     @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
-  }
-
-  .animate-fade-up {
-    animation: fadeUp 0.7s ease forwards;
   }
 
   @keyframes fadeUp {
@@ -144,21 +147,5 @@
       opacity: 1;
       transform: translateY(0);
     }
-  }
-
-  .animate-delay-100 {
-    animation-delay: 0.1s;
-  }
-  .animate-delay-200 {
-    animation-delay: 0.2s;
-  }
-  .animate-delay-300 {
-    animation-delay: 0.3s;
-  }
-  .animate-delay-400 {
-    animation-delay: 0.4s;
-  }
-  .animate-delay-500 {
-    animation-delay: 0.5s;
   }
 }

@@ -63,8 +63,11 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				navy: 'hsl(var(--navy))',
-				gold: 'hsl(var(--gold))',
+				'mb-blue': 'hsl(var(--mb-blue))',
+				'mb-blue-dark': 'hsl(var(--mb-blue-dark))',
+				'mb-blue-light': 'hsl(var(--mb-blue-light))',
+				'mb-orange': 'hsl(var(--mb-orange))',
+				'mb-orange-light': 'hsl(var(--mb-orange-light))',
 			},
 			fontFamily: {
 				display: ['Cormorant Garamond', 'serif'],
