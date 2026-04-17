@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
-const HERO_IMAGE = "https://cdn.poehali.dev/projects/3eb85f6c-1aea-4dab-86ee-01a67fd82db9/files/0a6c2dcf-721d-4cbe-9114-8842508a12c1.jpg";
+const HERO_IMAGE = "https://cdn.poehali.dev/projects/3eb85f6c-1aea-4dab-86ee-01a67fd82db9/files/66b14aed-0741-42bb-a7c3-5edac7ba15fa.jpg";
 
 /* ── Цветовые токены Мой бизнес ── */
 const BLUE = "hsl(218,73%,35%)";
@@ -161,18 +161,31 @@ export default function Index() {
 
       {/* HERO */}
       <section id="hero" className="relative h-screen flex items-end overflow-hidden">
-        <img src={HERO_IMAGE} alt="Центр Креативных Индустрий" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0" style={{ background: `linear-gradient(to top, ${BLUE_DARK} 0%, ${BLUE}99 40%, transparent 100%)` }} />
+        <img src={HERO_IMAGE} alt="Вологда — Центр Креативных Индустрий" className="absolute inset-0 w-full h-full object-cover object-center" />
 
-        {/* Декоративная полоса */}
+        {/* Многослойный градиент в цветах Мой бизнес */}
+        <div className="absolute inset-0" style={{ background: `linear-gradient(to top, ${BLUE_DARK}f2 0%, ${BLUE}cc 35%, ${BLUE}44 65%, transparent 100%)` }} />
+
+        {/* Синяя боковая панель — дизайн-код Мой бизнес */}
+        <div className="absolute left-0 top-0 bottom-0 w-1.5" style={{ background: ORANGE }} />
+
+        {/* Оранжевая полоса сверху */}
         <div className="absolute top-0 left-0 right-0 h-1" style={{ background: ORANGE }} />
+
+        {/* Декоративный текст города — watermark */}
+        <div className="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:block select-none pointer-events-none">
+          <p className="font-display text-[10rem] font-bold leading-none tracking-tighter text-white/5 rotate-90 origin-center">
+            ВОЛОГДА
+          </p>
+        </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pb-20 w-full">
           <div className="max-w-3xl" style={{ animation: "fadeUp 0.8s ease 0.2s both" }}>
-            <div className="flex items-center gap-3 mb-5">
-              <div className="h-px w-10" style={{ background: ORANGE }} />
-              <p className="font-body text-xs tracking-[0.35em] uppercase text-white/80">
-                Мой бизнес · Центр Креативных Индустрий
+            {/* Бейдж */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 mb-6" style={{ background: `${ORANGE}22`, border: `1px solid ${ORANGE}55` }}>
+              <div className="w-1.5 h-1.5 rounded-full" style={{ background: ORANGE }} />
+              <p className="font-body text-xs tracking-[0.3em] uppercase text-white/90">
+                Мой бизнес · Вологодская область
               </p>
             </div>
             <h1 className="font-display text-5xl md:text-7xl font-light text-white leading-[1.1] mb-6">
@@ -188,9 +201,24 @@ export default function Index() {
             </div>
           </div>
         </div>
-        <button onClick={() => scrollTo("about")} className="absolute bottom-8 right-10 text-white/40 hover:text-white transition-colors animate-bounce z-10">
-          <Icon name="ChevronDown" size={28} />
-        </button>
+
+        {/* Нижняя плашка — дизайн-код Мой бизнес */}
+        <div className="absolute bottom-0 left-0 right-0 z-10" style={{ background: `${BLUE}e8`, borderTop: `3px solid ${ORANGE}` }}>
+          <div className="max-w-7xl mx-auto px-6 md:px-12 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+            <div className="flex items-center gap-2">
+              <Icon name="MapPin" size={14} style={{ color: ORANGE }} />
+              <span className="font-body text-xs text-white/70 tracking-wide">г. Вологда, Вологодская область</span>
+            </div>
+            <div className="flex items-center gap-6 sm:gap-10">
+              {[["200+", "участников"], ["4", "направления"], ["60+", "проектов"], ["15", "лет опыта"]].map(([n, l]) => (
+                <div key={l} className="text-center">
+                  <p className="font-display text-lg font-semibold text-white leading-none">{n}</p>
+                  <p className="font-body text-[10px] text-white/50 tracking-widest uppercase mt-0.5">{l}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* ABOUT */}
